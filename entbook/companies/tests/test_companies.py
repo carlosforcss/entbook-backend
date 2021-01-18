@@ -17,6 +17,7 @@ class CompanyTest(TestCase):
             name=self.faker.name(),
             description=self.get_text(max_nb_chars=50),
             symbol=self.get_text(max_nb_chars=10),
+            market_values="{}, {}, {},".format(self.faker.name(), self.faker.name(), self.faker.name())
         )
         return data
 

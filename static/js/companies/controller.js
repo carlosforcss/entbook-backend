@@ -42,7 +42,7 @@ function generateDOMElement({tag, classes, attrs, content}){
         element.innerHTML = content
     }
     return element
-}
+} // end function
 
 function generateEmptyCard(){
     const card = generateDOMElement({
@@ -55,8 +55,8 @@ function generateEmptyCard(){
                 <div class="market-values-container"></div>
                 </div>
                 <div class="card-action">
-                    <button class="card-button btn edit-button">Editar</button>
-                    <button class="card-button btn delete-button">Eliminar</button>
+                    <button class="card-button btn edit-button">Edit</button>
+                    <button class="card-button btn delete-button">Delete</button>
                 </div>
             </div>
         `
