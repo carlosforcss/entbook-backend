@@ -20,6 +20,15 @@ class Company(CommonModel):
     def __str__(self):
         return "{} | {}".format(self.pk, self.name)
 
+    @property
+    def market_values_list(self):
+        if self.market_values:
+            if self.market_values.endswith(","):
+                self.market_values = self.market_values[:len(self.market_values ) - 1]
+            market_values_list = self.market_values.split(",")
+            return market_values_list
+        return []
+
     class Meta:
         db_table = "companies"
         ordering = ['-created_on']

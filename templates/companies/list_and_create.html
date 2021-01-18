@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Companies {% endblock %}
+
+{% block content %}
+    <!-- Create Companies -->
+    <div class="row">
+        <div class="col s12 m6 input-field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <div class="form-error" id="name-error"></div>
+        </div>
+        <div class="col s12 m6 input-field">
+            <label for="symbol">Symbol</label>
+            <input type="text" name="symbol" id="symbol" />
+            <div class="form-error" id="symbol-error"></div>
+        </div>
+        <div class="col s12 m6 input-field">
+            <textarea id="description" class="materialize-textarea"></textarea>
+            <label for="description">Description</label>
+            <div class="form-error" id="description-error"></div>
+        </div>
+        <div class="col s12 m6 input-field">
+            <label for="market-value">Market Values (split by commas)</label>
+            <input type="text" name="market-value" id="market-value" />
+            <div class="form-error" id="market_values-error"></div>
+            <div class="row">
+                <div class="col s12">
+                    <input type="text" class="d-none" name="market-values" />
+                    <div class="market-values-container" id="market-values-container"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <button class="btn right" id="send-button">
+                <i class="material-icons left">sd_card</i>
+                Guardar
+            </button>
+        </div>
+    </div>
+
+    <!-- Create Companies -->
+    <div class="row companies-container" id="companies-container">
+    </div>
+{% endblock %}
+
+{% block extrajs %}
+    <script src="{% static 'js/companies/controller.js' %}"></script>
+{% endblock %}

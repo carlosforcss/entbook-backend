@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Entbook | {% block title %}{% endblock title %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    {% csrf_token %}
+    <section class="fluid-container header">
+        <div class="row">
+            <div class="col s12 header-title">
+                EntBOOK
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        {% block content %}
+        {% endblock %}
+    </section>
+</body>
+<script src="{% static 'js/materialize.min.js' %}">
+</script>
+<script src="{% static 'js/api.js' %}"></script>
+{% block extrajs %}
+{% endblock %}
+</html>

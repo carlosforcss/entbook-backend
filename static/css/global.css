@@ -1,0 +1,52 @@
+.header{
+    background: #27B385;
+}
+
+.header-title{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.d-none{
+    display: none !important;
+}
+
+.market-values-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.market-value-tag{
+    display: flex;
+    flex-direction: row;
+    background: #1F5ADB;
+    border-radius: 5px;
+    color: white;
+    margin: 3px;
+    padding: 4px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.market-value-tag .material-icons{
+    font-size: 14px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+}
+
+.market-value-tag:hover .material-icons{
+    display: flex;
+}
+
+.card-button{
+    cursor: pointer;
+    color: white;
+}
+
+.delete-button{
+    background: red;
+}
