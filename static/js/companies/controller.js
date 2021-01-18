@@ -117,8 +117,8 @@ function handleCreateCompany(e) {
             api.companies.list().then(response_list => {
                 generateCompaniesList(response_list)
             })
-        }else if(response.status == 400){
-            response.json().then(error_response => showErrorModal(error_response))
+        }else {
+            showErrorModal(response)
         }
     })
 } // end function
