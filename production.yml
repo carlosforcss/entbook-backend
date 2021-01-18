@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./compose/production/Dockerfile
+    restart: always
+    volumes:
+      - ".:/app/"
+      - static_files:/static/
+    ports:
+      - 8000:8000
+
+  nginx:
+    build:
+      context: ./compose/nginx/
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 80:80
+    links:
+      - app:app
+    volumes:
+      - static_files:/static/
+    depends_on:
+      - app
+
+volumes:
+  static_files:
